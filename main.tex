@@ -1,0 +1,133 @@
+% !TEX encoding = utf8
+% !TEX program = xelatex
+% !TEX root = main.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	å¤§è¿çå·¥å¤§å­¦åå£«è®ºæ XeLaTeX æ¨¡ç ââ ä¸»æä»¶ main.tex
+% çæ¬ï¼0.86
+% æåæ´æ°ï¼2014.05.22
+% ä¿®æ¹èï¼Yuri (E-mail: yuri_1985@163.com)
+% ä¿®è®¢èï¼zzupc(E-mail: zzupchd@gmail.com;å¾®å:http://weibo.com/zzupc)
+% ç¼è¯ç¯å¢1ï¼Ubuntu 12.04 + TeXLive 2011 + Emacs
+% ç¼è¯ç¯å¢2ï¼Windows 7 + CTeX v2.9.2.164 + WinEdit
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, a4paper, openany, twoside]{book}
+\usepackage{pdflscape}
+
+% å­ä½éç½®æä»¶
+\input{setup/fonts}
+
+
+% å®åéç½®æä»¶
+\input{setup/packages}
+
+% æ ¼å¼æä»¶
+\input{setup/format}
+
+
+
+
+\begin{document}
+
+% å®ä¹ææçå¾çæä»¶å¨ figures å­ç®å½ä¸
+\graphicspath{{figures/}}
+
+% åè¨
+\frontmatter
+\pagenumbering{Roman}
+\input{preface/cover}       	% å°é¢
+%\includepdf{preface/cover1.pdf}
+%\cleardoublepage
+%\includepdf{preface/cover2.pdf}
+%\cleardoublepage
+%%\originality              		% ç¬åæ§
+%\includepdf{preface/copyright.pdf}
+\cleardoublepage
+%\makeabstract
+
+%\setcounter{tocdepth}{3}
+
+% è®¾ç½®ç®å½å­ä½åè¡é´è·
+
+\defaultmenufont
+% ç®å½
+\tableofcontents
+
+\cleardoublepage
+
+%\tableofengcontents
+%\addcontentsline{toc}{chapter}{CONTENTS}
+%\cleardoublepage
+% æå¾ç®å½
+
+\newcommand{\loflabel}{å¾}
+ \newcommand{\lotlabel}{è¡¨}
+
+\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+%\listoffigures
+%\addcontentsline{toc}{chapter}{å¾è¡¨ç®å½}
+% è¡¨æ ¼ç®å½
+\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+ %\listoftables
+ %\cleardoublepage
+%\include{body/Symbols}
+% \addcontentsline{toc}{chapter}{è¡¨æ ¼ç®å½}
+%\cleardoublepage
+
+
+\defaultfont
+\mainmatter
+% æ­£æç« è
+\defaultfont
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\include{body/chap01}
+\include{body/chap02}
+\include{body/chap03}
+
+
+% ç»è®º
+\include{body/conclusion}
+\cleardoublepage
+% \backmatter
+
+% åèæç®
+\addcontentsline{toc}{chapter}{åèæç®}
+\addcontentsline{toe}{chapter}{References} % åèæç®å å¥å°è±æç®å½ by zzupc
+\defaultfont
+\wuhao
+\bibliographystyle{zjugbno}
+\bibliography{body/reference}
+%\cleardoublepage
+% éå½
+%\defaultfont
+%\begin{appendix}
+%  \input{appendix/chapA}
+%\end{appendix}
+%\cleardoublepage
+
+%\defaultfont
+% åè¡¨çæç« åè¡¨
+%\include{appendix/publications}
+%\cleardoublepage
+% è´è°¢
+%\include{appendix/acknowledgements}
+%\cleardoublepage
+% ä½èç®ä»
+%\include{appendix/about}
+%\cleardoublepage
+
+% ææä¹¦
+%\chapter*{}
+%%\addcontentsline{toc}{chapter}{å¤§è¿çå·¥å¤§å­¦å­¦ä½è®ºæçæä½¿ç¨ææä¹¦}
+%%\addcontentsline{toe}{chapter}{Copyright}
+%\renewcommand{\baselinestretch}{1.61}
+%\vspace{-0.48cm}
+%\authorization
+%\cleardoublepage
+%\includepdf{preface/copyright.pdf}
+%\cleardoublepage
+\end{document}
